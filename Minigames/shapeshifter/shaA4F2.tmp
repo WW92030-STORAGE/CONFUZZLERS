@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://berxcn24bwelf"]
+
+[ext_resource type="Script" path="res://Minigames/shapeshifter/shapeshifter.gd" id="1_t0bbi"]
+[ext_resource type="Texture2D" uid="uid://bspwk6uc77dmt" path="res://Minigames/shapeshifter/SQUARE.png" id="2_t67j2"]
+[ext_resource type="Texture2D" uid="uid://2trrq4rsblyc" path="res://Minigames/shapeshifter/CIRCLE.png" id="3_7q7ep"]
+
+[sub_resource type="Gradient" id="Gradient_u1x2x"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8pb6d"]
+gradient = SubResource("Gradient_u1x2x")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_t0bbi")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+max_value = 256.0
+value = 128.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_8pb6d")
+metadata/_edit_group_ = true
+
+[node name="Blank" type="Sprite2D" parent="."]
+position = Vector2(576, 352)
+scale = Vector2(0.0625001, 0.0624999)
+texture = ExtResource("2_t67j2")
+
+[node name="LEFT" type="Sprite2D" parent="."]
+position = Vector2(320, 352)
+texture = ExtResource("2_t67j2")
+
+[node name="RIGHT" type="Sprite2D" parent="."]
+position = Vector2(832, 352)
+texture = ExtResource("3_7q7ep")

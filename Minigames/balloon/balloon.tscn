@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy07ke8s4q32b"]
+
+[ext_resource type="Script" path="res://Minigames/balloon/balloon.gd" id="1_6gvnx"]
+
+[sub_resource type="SystemFont" id="SystemFont_gola0"]
+font_names = PackedStringArray("Courier New")
+font_weight = 800
+
+[sub_resource type="Gradient" id="Gradient_t00b8"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8pb6d"]
+gradient = SubResource("Gradient_t00b8")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6gvnx")
+
+[node name="Take" type="PanelContainer" parent="."]
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 111.0
+
+[node name="Label" type="Label" parent="Take"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_gola0")
+theme_override_font_sizes/font_size = 40
+text = "TAKE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonTake" type="TextureButton" parent="Take"]
+layout_mode = 2
+
+[node name="Gamble" type="PanelContainer" parent="."]
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 704.0
+offset_bottom = 175.0
+
+[node name="Label" type="Label" parent="Gamble"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_gola0")
+theme_override_font_sizes/font_size = 40
+text = "FILL
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonGamble" type="TextureButton" parent="Gamble"]
+layout_mode = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+max_value = 256.0
+value = 128.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_8pb6d")
+metadata/_edit_group_ = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 303.0
+theme_override_fonts/font = SubResource("SystemFont_gola0")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pumps" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 192.0
+offset_right = 704.0
+offset_bottom = 239.0
+theme_override_fonts/font = SubResource("SystemFont_gola0")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Take/ButtonTake" to="." method="_on_button_take_pressed"]
+[connection signal="pressed" from="Gamble/ButtonGamble" to="." method="_on_button_gamble_pressed"]

@@ -1,0 +1,178 @@
+[gd_scene load_steps=5 format=3 uid="uid://gqmjudattiob"]
+
+[ext_resource type="Script" path="res://Minigames/pincode/pincode.gd" id="1_8hfjx"]
+
+[sub_resource type="SystemFont" id="SystemFont_xsbls"]
+font_names = PackedStringArray("Courier New")
+font_weight = 800
+
+[sub_resource type="SystemFont" id="SystemFont_pj54b"]
+font_names = PackedStringArray("Courier New")
+font_weight = 999
+
+[sub_resource type="SystemFont" id="SystemFont_7yfdu"]
+font_names = PackedStringArray("Courier New")
+font_weight = 999
+
+[node name="Pincode" type="Node2D"]
+script = ExtResource("1_8hfjx")
+
+[node name="CODE" type="PanelContainer" parent="."]
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 111.0
+
+[node name="Label" type="Label" parent="CODE"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_xsbls")
+theme_override_font_sizes/font_size = 40
+text = "TAKE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonTake" type="TextureButton" parent="CODE"]
+layout_mode = 2
+
+[node name="INPUT" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 704.0
+offset_bottom = 184.0
+theme_override_fonts/font = SubResource("SystemFont_pj54b")
+theme_override_font_sizes/font_size = 40
+text = "..."
+horizontal_alignment = 1
+
+[node name="KEYPAD" type="GridContainer" parent="."]
+offset_left = 448.0
+offset_top = 192.0
+offset_right = 704.0
+offset_bottom = 512.0
+columns = 3
+
+[node name="x1" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="x2" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "2"
+
+[node name="x3" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "3"
+
+[node name="x4" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "4
+"
+
+[node name="x5" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "5
+"
+
+[node name="x6" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "6
+"
+
+[node name="x7" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "7
+"
+
+[node name="x8" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "8
+"
+
+[node name="x9" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "9"
+
+[node name="x0" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="back" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="enter" type="Button" parent="KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "+"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 520.0
+offset_right = 704.0
+offset_bottom = 567.0
+theme_override_fonts/font = SubResource("SystemFont_xsbls")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="KEYPAD/x1" to="." method="_on_x_1_pressed"]
+[connection signal="pressed" from="KEYPAD/x2" to="." method="_on_x_2_pressed"]
+[connection signal="pressed" from="KEYPAD/x3" to="." method="_on_x_3_pressed"]
+[connection signal="pressed" from="KEYPAD/x4" to="." method="_on_x_4_pressed"]
+[connection signal="pressed" from="KEYPAD/x5" to="." method="_on_x_5_pressed"]
+[connection signal="pressed" from="KEYPAD/x6" to="." method="_on_x_6_pressed"]
+[connection signal="pressed" from="KEYPAD/x7" to="." method="_on_x_7_pressed"]
+[connection signal="pressed" from="KEYPAD/x8" to="." method="_on_x_8_pressed"]
+[connection signal="pressed" from="KEYPAD/x9" to="." method="_on_x_9_pressed"]
+[connection signal="pressed" from="KEYPAD/x0" to="." method="_on_x_0_pressed"]
+[connection signal="pressed" from="KEYPAD/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="KEYPAD/enter" to="." method="_on_enter_pressed"]

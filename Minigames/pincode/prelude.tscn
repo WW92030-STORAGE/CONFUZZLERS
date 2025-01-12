@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcxg7glxjmh0j"]
+
+[ext_resource type="Script" path="res://Minigames/pincode/prelude.gd" id="1_iwto0"]
+
+[sub_resource type="SystemFont" id="SystemFont_n788l"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_pv18v"]
+font_names = PackedStringArray("Courier New")
+font_weight = 999
+
+[node name="Prelude" type="Node2D"]
+script = ExtResource("1_iwto0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_n788l")
+theme_override_font_sizes/font_size = 80
+text = "CHOOSE A GAME MODE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 3
+
+[node name="NORMAL" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_pv18v")
+theme_override_font_sizes/font_size = 80
+text = "NORMAL"
+
+[node name="REVERSE" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_pv18v")
+theme_override_font_sizes/font_size = 80
+text = "REVERSE"
+
+[node name="SORTED" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_pv18v")
+theme_override_font_sizes/font_size = 80
+text = "SORTED"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/NORMAL" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/REVERSE" to="." method="_on_reverse_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/SORTED" to="." method="_on_sorted_pressed"]

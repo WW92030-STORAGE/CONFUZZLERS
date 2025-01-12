@@ -1,0 +1,167 @@
+[gd_scene load_steps=6 format=3 uid="uid://gqmjudattiob"]
+
+[ext_resource type="Script" path="res://Minigames/pincode/pincode.gd" id="1_8hfjx"]
+
+[sub_resource type="SystemFont" id="SystemFont_xsbls"]
+font_names = PackedStringArray("Courier New")
+font_weight = 800
+
+[sub_resource type="SystemFont" id="SystemFont_7yfdu"]
+font_names = PackedStringArray("Courier New")
+font_weight = 999
+
+[sub_resource type="Gradient" id="Gradient_u1x2x"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tfs6l"]
+gradient = SubResource("Gradient_u1x2x")
+
+[node name="Pincode" type="Node2D"]
+script = ExtResource("1_8hfjx")
+
+[node name="CODE" type="PanelContainer" parent="."]
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 111.0
+
+[node name="Label" type="Label" parent="CODE"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_xsbls")
+theme_override_font_sizes/font_size = 40
+text = "TAKE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonTake" type="TextureButton" parent="CODE"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 704.0
+offset_bottom = 448.0
+columns = 3
+
+[node name="1" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="2" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "2"
+
+[node name="3" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "3"
+
+[node name="4" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "4
+"
+
+[node name="5" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "5
+"
+
+[node name="6" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "6
+"
+
+[node name="7" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "7
+"
+
+[node name="8" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "8
+"
+
+[node name="9" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "9"
+
+[node name="0" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="back" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="enter" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_7yfdu")
+theme_override_font_sizes/font_size = 40
+text = "+"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+max_value = 256.0
+value = 128.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_tfs6l")
+metadata/_edit_group_ = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 456.0
+offset_right = 704.0
+offset_bottom = 503.0
+theme_override_fonts/font = SubResource("SystemFont_xsbls")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

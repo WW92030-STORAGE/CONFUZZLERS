@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://cel3mx5ivo5hp"]
+
+[ext_resource type="Script" path="res://Minigames/numblocks/numblocks.gd" id="1_gqgrx"]
+
+[sub_resource type="Gradient" id="Gradient_u1x2x"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8pb6d"]
+gradient = SubResource("Gradient_u1x2x")
+
+[sub_resource type="SystemFont" id="SystemFont_gola0"]
+font_names = PackedStringArray("Courier New")
+font_weight = 800
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_gqgrx")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+max_value = 256.0
+value = 128.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_8pb6d")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 320.0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_gola0")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_gola0")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer3"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_gola0")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/PanelContainer3"]
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer4"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_gola0")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/PanelContainer4"]
+layout_mode = 2

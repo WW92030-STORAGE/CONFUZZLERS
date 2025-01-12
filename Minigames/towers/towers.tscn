@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgj6jiqdxrnte"]
+
+[ext_resource type="Script" path="res://Minigames/towers/towers.gd" id="1_2pa1i"]
+[ext_resource type="PackedScene" uid="uid://cdsh4ti1k63t3" path="res://Minigames/towers/blocks.tscn" id="1_uh5x3"]
+[ext_resource type="Texture2D" uid="uid://dw6il04a13tol" path="res://Minigames/shapeshifter/TRIANGLE.png" id="3_tnl0k"]
+[ext_resource type="Theme" uid="uid://ch025hcyggdr3" path="res://Minigames/mastermind/mastermind.tres" id="4_itt61"]
+
+[sub_resource type="Gradient" id="Gradient_u1x2x"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qnvl4"]
+gradient = SubResource("Gradient_u1x2x")
+
+[sub_resource type="SystemFont" id="SystemFont_bw5l6"]
+font_names = PackedStringArray("Courier New")
+font_weight = 800
+subpixel_positioning = 0
+
+[node name="towers" type="Node2D"]
+script = ExtResource("1_2pa1i")
+
+[node name="Blocks" parent="." instance=ExtResource("1_uh5x3")]
+position = Vector2(16, 448)
+scale = Vector2(1.5, 1.5)
+metadata/CLICKABLE = true
+
+[node name="Blocks2" parent="." instance=ExtResource("1_uh5x3")]
+position = Vector2(528, 448)
+scale = Vector2(1.5, 1.5)
+metadata/CLICKABLE = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+max_value = 256.0
+value = 128.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_qnvl4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(416, 256)
+rotation = -3.14159
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_tnl0k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_top = 464.0
+offset_right = 320.0
+offset_bottom = 613.0
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_bw5l6")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Moves" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_bw5l6")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Total" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_bw5l6")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SKIP" type="Button" parent="."]
+offset_left = 832.0
+offset_top = 512.0
+offset_right = 1150.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+theme = ExtResource("4_itt61")
+text = "SKIP LEVEL
+"
+
+[connection signal="pressed" from="SKIP" to="." method="_on_skip_pressed"]

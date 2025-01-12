@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdsh4ti1k63t3"]
+
+[ext_resource type="Script" path="res://Minigames/towers/blocks.gd" id="1_2c20y"]
+[ext_resource type="Texture2D" uid="uid://dah600htqisfx" path="res://Minigames/towers/BOX_256_TRANS - Copy.png" id="2_17koh"]
+[ext_resource type="Texture2D" uid="uid://bb34kol16cvbj" path="res://Minigames/towers/red.png" id="2_cm57e"]
+
+[node name="Blocks" type="Node2D"]
+script = ExtResource("1_2c20y")
+
+[node name="s0" type="VBoxContainer" parent="."]
+offset_right = 64.0
+offset_bottom = 256.0
+scale = Vector2(1, -1)
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="s0"]
+layout_mode = 2
+texture = ExtResource("2_cm57e")
+
+[node name="TextureRect2" type="TextureRect" parent="s0"]
+layout_mode = 2
+texture = ExtResource("2_cm57e")
+
+[node name="s1" type="VBoxContainer" parent="."]
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 256.0
+scale = Vector2(1, -1)
+theme_override_constants/separation = 0
+
+[node name="s2" type="VBoxContainer" parent="."]
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 256.0
+scale = Vector2(1, -1)
+theme_override_constants/separation = 0
+
+[node name="b0" type="Sprite2D" parent="."]
+position = Vector2(32, -128)
+scale = Vector2(0.25, 1)
+texture = ExtResource("2_17koh")
+
+[node name="b1" type="Sprite2D" parent="."]
+position = Vector2(96, -128)
+scale = Vector2(0.25, 1)
+texture = ExtResource("2_17koh")
+
+[node name="b2" type="Sprite2D" parent="."]
+position = Vector2(160, -128)
+scale = Vector2(0.25, 1)
+texture = ExtResource("2_17koh")
+
+[node name="FRAME" type="Sprite2D" parent="."]
+position = Vector2(96, -128)
+scale = Vector2(0.8125, 1.0625)
+texture = ExtResource("2_17koh")
+
+[node name="x0" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_top = -256.0
+offset_right = 64.0
+
+[node name="x1" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 64.0
+offset_top = -256.0
+offset_right = 128.0
+
+[node name="x2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 128.0
+offset_top = -256.0
+offset_right = 192.0
+
+[connection signal="pressed" from="x0" to="." method="_on_x_0_pressed"]
+[connection signal="pressed" from="x1" to="." method="_on_x_1_pressed"]
+[connection signal="pressed" from="x2" to="." method="_on_x_2_pressed"]

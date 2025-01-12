@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxlxe24iqhs6h"]
+
+[ext_resource type="Script" path="res://Minigames/grillmaster/grillmaster.gd" id="1_cb60n"]
+
+[sub_resource type="Gradient" id="Gradient_u1x2x"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8pb6d"]
+gradient = SubResource("Gradient_u1x2x")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_cb60n")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+max_value = 256.0
+value = 128.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_8pb6d")
+metadata/_edit_group_ = true

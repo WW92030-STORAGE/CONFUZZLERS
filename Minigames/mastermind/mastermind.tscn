@@ -1,0 +1,234 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7arhh608eky4"]
+
+[ext_resource type="Script" path="res://Minigames/mastermind/mastermind.gd" id="1_cpw7b"]
+[ext_resource type="Theme" uid="uid://ch025hcyggdr3" path="res://Minigames/mastermind/mastermind.tres" id="1_q4ycw"]
+
+[sub_resource type="SystemFont" id="SystemFont_mr3wk"]
+font_names = PackedStringArray("Courier New")
+font_weight = 800
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_ljgwk"]
+font_names = PackedStringArray("Courier New")
+font_weight = 999
+
+[sub_resource type="Gradient" id="Gradient_waaxc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ykjws"]
+gradient = SubResource("Gradient_waaxc")
+
+[node name="Mastermind" type="Node2D"]
+script = ExtResource("1_cpw7b")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="INPUT2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_mr3wk")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="INPUT" type="Label" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_mr3wk")
+theme_override_font_sizes/font_size = 40
+text = "****"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KEYPAD" type="GridContainer" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="x1" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="x2" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "2"
+
+[node name="x3" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "3"
+
+[node name="x4" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "4
+"
+
+[node name="x5" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "5
+"
+
+[node name="x6" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "6
+"
+
+[node name="x7" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "7
+"
+
+[node name="x8" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "8
+"
+
+[node name="x9" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "9"
+
+[node name="x0" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "0"
+
+[node name="back" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="enter" type="Button" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_ljgwk")
+theme_override_font_sizes/font_size = 40
+text = "+"
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_mr3wk")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_mr3wk")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AvgTime" type="Label" parent="MarginContainer/VBoxContainer/Grid/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_mr3wk")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attempts" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Grid/Attempts"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Grid/Attempts/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_q4ycw")
+text = "..."
+horizontal_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+max_value = 256.0
+value = 128.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_ykjws")
+metadata/_edit_group_ = true
+
+[node name="SKIP" type="Button" parent="."]
+offset_left = 576.0
+offset_right = 1150.0
+offset_bottom = 55.0
+size_flags_horizontal = 3
+theme = ExtResource("1_q4ycw")
+text = "SKIP LEVEL
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x1" to="." method="_on_x_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x2" to="." method="_on_x_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x3" to="." method="_on_x_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x4" to="." method="_on_x_4_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x5" to="." method="_on_x_5_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x6" to="." method="_on_x_6_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x7" to="." method="_on_x_7_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x8" to="." method="_on_x_8_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x9" to="." method="_on_x_9_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/x0" to="." method="_on_x_0_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/VBoxContainer/KEYPAD/enter" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="SKIP" to="." method="_on_skip_pressed"]

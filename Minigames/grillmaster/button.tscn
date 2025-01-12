@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://wgwowd78tlcn"]
+
+[ext_resource type="Script" path="res://Minigames/grillmaster/button.gd" id="1_v5xsu"]
+[ext_resource type="Texture2D" uid="uid://dolo50dttwyyv" path="res://Minigames/grillmaster/CIRCLE.png" id="2_tsvnd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rvfp6"]
+
+[node name="Button" type="CharacterBody2D"]
+scale = Vector2(8, 8)
+script = ExtResource("1_v5xsu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rvfp6")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+value = 40.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("2_tsvnd")
+texture_progress = ExtResource("2_tsvnd")
+tint_under = Color(0, 0, 0, 1)

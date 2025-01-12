@@ -1,0 +1,137 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3lumyttdv1os"]
+
+[ext_resource type="Script" path="res://Minigames/theswitch/theswitch.gd" id="1_pnng7"]
+
+[sub_resource type="SystemFont" id="SystemFont_pj54b"]
+font_names = PackedStringArray("Courier New")
+font_weight = 999
+
+[sub_resource type="SystemFont" id="SystemFont_o4txc"]
+font_names = PackedStringArray("Courier New")
+font_weight = 999
+
+[sub_resource type="SystemFont" id="SystemFont_xsbls"]
+font_names = PackedStringArray("Courier New")
+font_weight = 800
+
+[sub_resource type="Gradient" id="Gradient_8v75i"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xicta"]
+gradient = SubResource("Gradient_8v75i")
+
+[node name="TheSwitch" type="Node2D"]
+script = ExtResource("1_pnng7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 176.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 320.0
+offset_top = 200.0
+offset_right = 832.0
+offset_bottom = 248.0
+color = Color(0, 0, 0, 1)
+
+[node name="INPUT" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 184.0
+theme_override_fonts/font = SubResource("SystemFont_pj54b")
+theme_override_font_sizes/font_size = 40
+text = "SUM IS EVEN?"
+horizontal_alignment = 1
+
+[node name="LEFT" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 200.0
+offset_right = 568.0
+offset_bottom = 256.0
+theme_override_fonts/font = SubResource("SystemFont_pj54b")
+theme_override_font_sizes/font_size = 40
+text = ">>>>|<<<<"
+horizontal_alignment = 1
+
+[node name="RIGHT" type="Label" parent="."]
+offset_left = 584.0
+offset_top = 200.0
+offset_right = 840.0
+offset_bottom = 256.0
+theme_override_fonts/font = SubResource("SystemFont_pj54b")
+theme_override_font_sizes/font_size = 40
+text = "2 + 1"
+horizontal_alignment = 1
+
+[node name="HBox" type="GridContainer" parent="."]
+offset_left = 320.0
+offset_top = 256.0
+offset_right = 832.0
+offset_bottom = 296.0
+columns = 2
+
+[node name="TRUE" type="Button" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_o4txc")
+theme_override_font_sizes/font_size = 40
+text = "TRUE"
+
+[node name="FALSE" type="Button" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_o4txc")
+theme_override_font_sizes/font_size = 40
+text = "FALSE"
+
+[node name="Score" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 336.0
+offset_right = 704.0
+offset_bottom = 383.0
+theme_override_fonts/font = SubResource("SystemFont_xsbls")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 384.0
+offset_right = 704.0
+offset_bottom = 431.0
+theme_override_fonts/font = SubResource("SystemFont_xsbls")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AvgTime" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 432.0
+offset_right = 704.0
+offset_bottom = 479.0
+theme_override_fonts/font = SubResource("SystemFont_xsbls")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 1152.0
+offset_bottom = 10.0
+size_flags_horizontal = 3
+max_value = 256.0
+value = 128.0
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture1D_xicta")
+metadata/_edit_group_ = true
+
+[connection signal="pressed" from="HBox/TRUE" to="." method="_on_true_pressed"]
+[connection signal="pressed" from="HBox/FALSE" to="." method="_on_false_pressed"]
