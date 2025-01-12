@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://c8r0gyqeu8rf5"]
+
+[ext_resource type="Script" path="res://TitleMenu.gd" id="1_cty8i"]
+[ext_resource type="Texture2D" uid="uid://bm1nhr104eglc" path="res://icons/grill_icon.png" id="1_oihro"]
+[ext_resource type="Texture2D" uid="uid://c6b8kjcxwux4t" path="res://icons/numblocks_icon.png" id="3_pyff5"]
+[ext_resource type="Texture2D" uid="uid://diyrxyvpv0ltn" path="res://Minigames/shapeshifter_icon.png" id="4_1ydq8"]
+[ext_resource type="Texture2D" uid="uid://b7dwv47qmhmqu" path="res://icons/balloon_icon.png" id="5_np6yd"]
+[ext_resource type="Texture2D" uid="uid://dliicc3qk8qla" path="res://icons/codecompare_icon.png" id="6_v4tvm"]
+[ext_resource type="Texture2D" uid="uid://cvep0ovthelan" path="res://icons/pincode_icon.png" id="7_xnujs"]
+[ext_resource type="Texture2D" uid="uid://d7c5ag8vapmn" path="res://icons/theswitch_icon.png" id="8_y1lpc"]
+[ext_resource type="Texture2D" uid="uid://xu62hpqimopq" path="res://icons/mastermind_icon.png" id="9_6r8mv"]
+[ext_resource type="Texture2D" uid="uid://sva3basyk8qp" path="res://icons/towers_icon.png" id="10_7e3on"]
+
+[sub_resource type="SystemFont" id="SystemFont_caum8"]
+font_names = PackedStringArray("Impact")
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 1152.0
+offset_bottom = 640.0
+script = ExtResource("1_cty8i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_caum8")
+theme_override_font_sizes/font_size = 80
+text = "..."
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 3
+
+[node name="GrillButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_oihro")
+stretch_mode = 0
+
+[node name="NumBlocksButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_pyff5")
+stretch_mode = 0
+
+[node name="ShapeshifterButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_1ydq8")
+stretch_mode = 0
+
+[node name="BalloonButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_np6yd")
+stretch_mode = 0
+
+[node name="CodeCompareButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_v4tvm")
+stretch_mode = 0
+
+[node name="PINCodeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_xnujs")
+stretch_mode = 0
+
+[node name="THESWITCHButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_y1lpc")
+stretch_mode = 0
+
+[node name="MastermindButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_6r8mv")
+stretch_mode = 0
+
+[node name="TowersButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_7e3on")
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/GrillButton" to="." method="_on_grill_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/GrillButton" to="." method="_on_grill_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/GrillButton" to="." method="_on_grill_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/NumBlocksButton" to="." method="_on_num_blocks_button_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/NumBlocksButton" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/NumBlocksButton" to="." method="_on_num_blocks_button_mouse_exited"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/NumBlocksButton" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/NumBlocksButton" to="." method="_on_num_blocks_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/NumBlocksButton" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/ShapeshifterButton" to="." method="_on_shapeshifter_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/ShapeshifterButton" to="." method="_on_shapeshifter_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/ShapeshifterButton" to="." method="_on_shapeshifter_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/BalloonButton" to="." method="_on_balloon_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/BalloonButton" to="." method="_on_balloon_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/BalloonButton" to="." method="_on_balloon_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/CodeCompareButton" to="." method="_on_code_compare_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/CodeCompareButton" to="." method="_on_code_compare_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/CodeCompareButton" to="." method="_on_code_compare_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/PINCodeButton" to="." method="_on_pin_code_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/PINCodeButton" to="." method="_on_pin_code_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/PINCodeButton" to="." method="_on_pin_code_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/THESWITCHButton" to="." method="_on_theswitch_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/THESWITCHButton" to="." method="_on_theswitch_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/THESWITCHButton" to="." method="_on_theswitch_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/MastermindButton" to="." method="_on_mastermind_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/MastermindButton" to="." method="_on_mastermind_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/MastermindButton" to="." method="_on_mastermind_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/GridContainer/TowersButton" to="." method="_on_towers_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/GridContainer/TowersButton" to="." method="_on_towers_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/GridContainer/TowersButton" to="." method="_on_towers_button_pressed"]
